@@ -11,46 +11,44 @@ function Description(){
         of dedicated professionals brings a wealth of experience in the financial
         industry, ensuring that every decision is backed by deep expertise and
         precision.
-        We target an annual return of <b>30%</b>as Return on Investment (ROI) on the
+        We target an annual return of <b>30%</b> as Return on Investment (ROI) on the
         long-term investment (Special Fund) and an annual return of <b>13%</b> as
         Interest on the Money Market Fund.
         </p>
         <div
         className="pt-4">
             <p>PAAB Capital is committed to offering the following services:</p>
-            <ul>
+            <ul className="list-disc pl-6">
                 <li><b>Asset Management</b>: Tailored strategies to ensure optimal portfolio
                 growth, both locally and globally.</li>
 
-                <li><b> Securities Trading</b>: Access to global markets, with a focus on risk-
+                <li><b>Securities Trading</b>: Access to global markets, with a focus on risk-
                 adjusted returns.</li>
 
-                <li> <b>Corporate Finance Advisory</b>: Helping businesses navigate financial
+                <li><b>Corporate Finance Advisory</b>: Helping businesses navigate financial
                 complexities with expert advice and strategies.</li>
                 <li><b>Market Research</b>: Offering valuable insights and analysis to guide
                 investment decisions.</li>
-                <li> <b>Investment Services</b>: A variety of solutions to suit different investor
+                <li><b>Investment Services</b>: A variety of solutions to suit different investor
                 needs, from retail to institutional.</li>
             </ul>
         </div>
         <div
-        className="flex flex-wrap gap-4.5"> 
+        className="flex flex-wrap gap-4.5 pt-3"> 
             <div
             className="border-2 rounded-xl overflow-auto shadow-md shadow-gray-400 p-1.5">
                 <h3
                 className="text-xl underline">
                     <b>Key Details for The Special Fund</b>
                 </h3>
-                <ul>
-                    <li><b></b></li>
-                    <li><b>Base Currency:</b>Kenyan Shilling (KES)</li>
-                    <li><b>Preferable Investment:</b>KES 500,000</li>
-                    <li><b>Minimum Top-up:</b>KES 50,000</li>
-                    <li><b>Minimum Lock-in Period:</b>6 Months</li>
-                    <li><b>Management Fees:</b>5.5% p.a. pro-rated</li>
-                    <li><b>Fund Manager:</b>PAAB Capital</li>
-                    <li><b>Years in the Industry:</b>5 years</li>
-
+                <ul className="list-disc pl-6">
+                    <li><b>Base Currency:</b> Kenyan Shilling (KES)</li>
+                    <li><b>Preferable Investment:</b> KES 500,000</li>
+                    <li><b>Minimum Top-up:</b> KES 50,000</li>
+                    <li><b>Minimum Lock-in Period:</b> 6 Months</li>
+                    <li><b>Management Fees:</b> 5.5% p.a. pro-rated</li>
+                    <li><b>Fund Manager:</b> PAAB Capital</li>
+                    <li><b>Years in the Industry:</b> 5 years</li>
                 </ul>
             </div>
             <div
@@ -59,15 +57,14 @@ function Description(){
                 className="text-xl underline">
                     <b>Key Details for The Money Market Fund</b>
                 </h3>
-                <ul>
-                    <li><b>Base Currency:</b>Kenyan Shilling (KES)</li>
-                    <li><b>Preferable Investment:</b>KES 135,000</li>
-                    <li><b>Minimum Top-up:</b>KES 13,000</li>
-                    <li><b>Management Fees:</b>2.5% p.a. on interested earned</li>
-                    <li><b>Withholding Tax:</b>15%</li>
-                    <li><b>Fund Manager:</b>PAAB Capital</li>
-                    <li><b>Years in the Industry:</b>5 years</li>
-
+                <ul className="list-disc pl-6">
+                    <li><b>Base Currency:</b> Kenyan Shilling (KES)</li>
+                    <li><b>Preferable Investment:</b> KES 135,000</li>
+                    <li><b>Minimum Top-up:</b> KES 13,000</li>
+                    <li><b>Management Fees:</b> 2.5% p.a. on interested earned</li>
+                    <li><b>Withholding Tax:</b> 15%</li>
+                    <li><b>Fund Manager:</b> PAAB Capital</li>
+                    <li><b>Years in the Industry:</b> 5 years</li>
                 </ul>
             </div>
         </div>

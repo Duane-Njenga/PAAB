@@ -1,7 +1,7 @@
 function Navbar(){
     return (
     <div
-    className="bg-orange-400 w-full flex gap-1.5 p-3 "
+      className="bg-purple-900 text-white w-full flex gap-3 p-4 shadow-md"
     >
         <a href="#Introduction" className="mx-2">Home</a>
         <a href="#WhyUs" className="mx-2">Why us</a>
