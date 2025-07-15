@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PAAB Investment</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="header">
+            <a href="#home" class="logo">
+                <img src="Images/p1.jpg" alt="PAAB Investment Logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="home.html">Home</a>
+                <div class="dropdown">
+                    <a href="#services" class="dropbtn">Services <span class="arrow">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-submenu">
+                            <a href="#investments" class="submenu-toggle">Investments</a>
+                            <div class="submenu-content">
+                                <a href="special.html">Special Fund</a>
+                                <a href="unittrust.html">Unit Trust Fund</a>
+                            </div>
+                        </div>
+                        <a href="CapitalRiskAdvisory.html">Capital Risk Advisory</a>
+                        <a href="InnovativeSavings.html">Innovative Savings</a>
+                        <a href="StrategicPartnerships.html">Strategic Partnerships</a>
+                        <a href="WealthManagement.html">Wealth Management</a>
+                        <a href="AdvisoryServices.html">Advisory Services</a>
+                        <a href="TrainingEducation.html">Training & Education</a>
+                    </div>
+                </div>
+                <a href="AboutUs.html">About Us</a>
+                <a href="contactus.html">Contact Us</a>
+                <a href="Resources.html">Resources</a>
+                <a href="faq.html">FAQs</a>
+            </nav>
+
+            <div class="icons">
+                <div class="fas fa-bars" id="menu-btn"></div>
+            </div>
+        </header>
+
+        <section class="home" id="home">
+            <div class="content">
+                <h3>Welcome to PAAB Capital</h3>
+                <p>Your trusted partner for financial growth and investment opportunities. We provide comprehensive investment solutions tailored to your needs.</p>
+                <a href="#contact" class="btn">Contact Us Now</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PAAB Investment</h4>
+                    <p>Your trusted partner for financial growth and investment opportunities.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="home.html">Home</a>
+                    <div class="footer-dropdown">
+                        <a href="#" class="footer-dropbtn">Services <span class="arrow">&#9662;</span></a>
+                        <div class="footer-dropdown-content">
+                            <a href="special.html">Special Fund</a>
+                            <a href="unittrust.html">Unit Trust Fund</a>
+                            <a href="CapitalRiskAdvisory.html">Capital Risk Advisory</a>
+                            <a href="InnovativeSavings.html">Innovative Savings</a>
+                            <a href="StrategicPartnerships.html">Strategic Partnerships</a>
+                            <a href="WealthManagement.html">Wealth Management</a>
+                            <a href="AdvisoryServices.html">Advisory Services</a>
+                            <a href="TrainingEducation.html">Training & Education</a>
+                        </div>
+                    </div>
+                    <a href="AboutUs.html">About Us</a>
+                    <a href="contactus.html">Contact Us</a>
+                    <a href="Resources.html">Resources</a>
+                    <a href="faq.html">FAQs</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@paabinvestment.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Location</h4>
+                    <p>New Hope Outreach Ministries</p>
+                    <p>Nairobi, Kenya</p>
+                </div>
+            </div>
+            <div class="footer-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d390.21782441165203!2d36.81180977030846!3d-1.3101320503106324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f119e2dc3817d%3A0x71bf2d585d2984cc!2sNew%20Hope%20Outreach%20Ministries!5e0!3m2!1sen!2ske!4v1750247760247!5m2!1sen!2ske" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PAAB Investment. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        <script>
+        // Footer Services Dropdown (Click to Open)
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropbtn = document.querySelector('.footer-dropbtn');
+            var dropdown = document.querySelector('.footer-dropdown');
+            if (dropbtn && dropdown) {
+                dropbtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                });
+                // Close dropdown if clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('open');
+                    }
+                });
+            }
+        });
+        </script>
+    </body>
+</html>
