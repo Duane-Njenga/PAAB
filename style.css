@@ -210,7 +210,7 @@ section{
 
 .footer-section p,
 .footer-section a{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #ccc;
     line-height: 1.6;
     display: block;
@@ -229,6 +229,7 @@ section{
 
 .footer-section .contact-info p{
     margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
 .social-links {
@@ -413,14 +414,16 @@ section{
         padding: 0;
         opacity: 0;
         visibility: hidden;
+        pointer-events: none;
         max-height: 0;
         overflow: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .header .navbar .dropdown.open .dropdown-content {
         opacity: 1;
         visibility: visible;
+        pointer-events: auto;
         max-height: 500px;
     }
     .header .navbar .dropdown-content a {
@@ -641,7 +644,6 @@ section{
 }
 
 .navbar .dropdown-content {
-    display: block;
     position: absolute;
     left: 0;
     top: 100%;
@@ -651,13 +653,15 @@ section{
     min-width: 320px;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transform: translateY(-10px);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar .dropdown.open .dropdown-content {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
 }
 
@@ -701,18 +705,19 @@ section{
     background: #18181b;
     color: #fff;
     border-radius: 0 0 16px 16px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     padding: 0.5rem 0;
     min-width: 320px;
+    border: 1px solid var(--main-color);
 }
 .dropdown-content a {
     color: #fff;
-    padding: 1.4rem 2.4rem;
+    padding: 1.2rem 2rem;
     display: block;
     text-decoration: none;
-    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 0;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     font-weight: 500;
     text-align: left;
     border-bottom: 1px solid rgba(255,255,255,0.07);
@@ -722,7 +727,7 @@ section{
     border-bottom: none;
 }
 .dropdown-content a:hover {
-    background: #d2a97d;
+    background: var(--main-color);
     color: #18181b;
     box-shadow: 0 2px 8px rgba(210,169,125,0.12);
 }
@@ -931,7 +936,7 @@ section{
 }
 .leader-desc {
     color: #e0e0e0;
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.6;
 }
@@ -1049,26 +1054,28 @@ section{
     margin-left: 0.5em;
 }
 .submenu-content {
-    display: block;
     position: absolute;
     left: 100%;
     top: 0;
     min-width: 200px;
     background: #18181b;
     border-radius: 0 0 16px 16px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     z-index: 1002;
     padding: 0.5rem 0;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transform: translateX(-10px);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--main-color);
 }
 
 .dropdown-submenu:hover > .submenu-content,
 .dropdown-submenu:focus-within > .submenu-content {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translateX(0);
 }
 
@@ -1077,7 +1084,7 @@ section{
     padding: 1.2rem 2rem;
     display: block;
     text-decoration: none;
-    transition: background 0.18s, color 0.18s;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 0;
     font-size: 1.6rem;
     font-weight: 500;
@@ -1089,7 +1096,7 @@ section{
         border-bottom: none;
 }
 .submenu-content a:hover {
-    background: #d2a97d;
+    background: var(--main-color);
     color: #18181b;
 }
 @media (max-width: 900px) {
@@ -1111,13 +1118,15 @@ section{
     .submenu-content {
         opacity: 0;
         visibility: hidden;
+        pointer-events: none;
         max-height: 0;
         overflow: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .dropdown-submenu.open > .submenu-content {
         opacity: 1;
         visibility: visible;
+        pointer-events: auto;
         max-height: 500px;
     }
 }
@@ -1163,14 +1172,14 @@ section{
 
 .special-hero-desc h2 {
     color: var(--main-color);
-    font-size: 2.1rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
 .special-hero-desc p {
     color: #fff;
-    font-size: 1.25rem;
+    font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.7;
     margin-bottom: 0;
@@ -1190,10 +1199,10 @@ section{
         padding: 1.2rem 0.7rem 1.5rem 0.7rem;
     }
     .special-hero-desc h2 {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
     .special-hero-desc p {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -1387,7 +1396,7 @@ section{
   background: none;
   border: none;
   color: #fff;
-  font-size: 1.35rem;
+  font-size: 1.6rem;
   font-weight: 700;
   width: 100%;
   text-align: center;
@@ -1755,31 +1764,67 @@ section{
     color: #fff;
     margin: 0;
     border: 1px solid var(--main-color);
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .contact-info-card h3 {
     color: var(--main-color);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin: 1.2rem 0 0.7rem 0;
+    margin: 0.8rem 0 0.4rem 0;
     letter-spacing: 0.01em;
 }
 
 .contact-info-card p {
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-bottom: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* Specific styling for email card only */
+.email-card p {
+    font-size: 1.3rem !important;
+}
+
+/* Target the email link specifically */
+.email-card .contact-email-link {
+    font-size: 1.3rem !important;
+}
+
+/* Override any other styles that might be affecting the email */
+.email-card p a {
+    font-size: 1.3rem !important;
+}
+
+/* Additional specificity to ensure override */
+.contact-info-card.email-card p {
+    font-size: 1.3rem !important;
+}
+
+/* Target the email card specifically with maximum specificity */
+div.contact-info-card.email-card p a.contact-email-link {
+    font-size: 1.3rem !important;
 }
 
 .contact-icon {
     font-size: 2.2rem;
     color: var(--main-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2rem;
 }
 
 .contact-email-link {
     color: var(--main-color);
     text-decoration: underline;
+    font-size: 1.3rem;
 }
 
 .contact-form-grid {
@@ -1799,7 +1844,7 @@ section{
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 0.4rem;
     border: none;
 }
 
@@ -1808,6 +1853,7 @@ section{
     font-size: 1.3rem;
     font-weight: 600;
     text-align: left;
+    margin-bottom: 0;
 }
 
 .contact-form input,
@@ -1819,7 +1865,7 @@ section{
     border-radius: 0;
     padding: 1.1rem 1rem 0.7rem 1rem;
     font-size: 1.3rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.3rem;
     outline: none;
     resize: vertical;
     box-shadow: none;
@@ -2246,7 +2292,7 @@ section{
 }
 
 .risk-service-tool-card p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: #fff;
     margin-bottom: 0;
 }
@@ -2287,7 +2333,7 @@ section{
 }
 
 .savings-section-title {
-    font-size: 2rem;
+    font-size: 2.8rem;
     color: var(--main-color);
     font-weight: 700;
     margin-bottom: 1.2rem;
@@ -2375,7 +2421,7 @@ section{
         padding: 1.2rem 0.5rem 1.2rem 0.5rem;
     }
     .savings-section-title {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
     .savings-headline {
         font-size: 1.7rem;
@@ -2450,14 +2496,14 @@ section{
 }
 
 .savings-why-title {
-    font-size: 1.7rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--main-color);
     margin-bottom: 0.2rem;
 }
 
 .savings-why-desc {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     color: #fff;
     opacity: 0.85;
 }
@@ -2476,10 +2522,10 @@ section{
         font-size: 1.3rem;
     }
     .savings-why-title {
-        font-size: 1.05rem;
+        font-size: 1.6rem;
     }
     .savings-why-desc {
-        font-size: 0.95rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -2516,8 +2562,8 @@ section{
 }
 
 .savings-offer-icon {
-    background: #fff;
-    color: var(--main-color);
+    background: var(--main-color);
+    color: #fff;
     border-radius: 50%;
     width: 56px;
     height: 56px;
@@ -2527,6 +2573,7 @@ section{
     font-size: 2.2rem;
     margin: 0 auto 1.2rem auto;
     box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    transition: all 0.3s ease;
 }
 
 .savings-offer-title {
@@ -2545,7 +2592,7 @@ section{
 }
 
 .savings-offer-features li {
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     color: #fff;
     margin-bottom: 0.7rem;
     padding-left: 0.5rem;
@@ -2557,8 +2604,8 @@ section{
 }
 
 .savings-offer-card:hover .savings-offer-icon {
-    background: var(--main-color);
-    color: #fff;
+    background: #fff;
+    color: var(--main-color);
 }
 
 @media (max-width: 900px) {
@@ -3192,15 +3239,688 @@ section{
 }
 
 .unit-trust-hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Images/p5.jpg');
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%), url('Images/business-people-working-with-ipad-high-angle.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: #fff;
-    padding: 6rem 0 3rem 0;
+    padding: 8rem 7% 6rem;
     text-align: center;
+    color: #fff;
+    margin-top: 9rem;
     min-height: 60vh;
+}
+
+/* Special Fund CTA Section */
+.special-cta-section {
+    background: linear-gradient(135deg, rgba(211,173,127,0.1) 0%, rgba(0,0,0,0.8) 100%);
+    padding: 6rem 7%;
+    text-align: center;
+    color: #fff;
+    margin: 4rem 0;
+}
+
+.special-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.special-cta-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+.special-cta-subtitle {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.special-cta-buttons {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.special-cta-btn {
+    background: var(--main-color);
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(211,173,127,0.3);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.special-cta-btn:hover {
+    background: #fff;
+    color: var(--main-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(211,173,127,0.4);
+}
+
+@media (max-width: 900px) {
+    .special-cta-section {
+        padding: 4rem 7%;
+        margin: 3rem 0;
+    }
+    
+    .special-cta-title {
+        font-size: 2.6rem;
+    }
+    
+    .special-cta-subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .special-cta-btn {
+        font-size: 1.6rem;
+        padding: 1.3rem 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .special-cta-title {
+        font-size: 2.2rem;
+    }
+    
+    .special-cta-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .special-cta-btn {
+        font-size: 1.4rem;
+        padding: 1.2rem 2rem;
+    }
+}
+
+/* Unit Trust CTA Section */
+.unit-trust-cta-section {
+    background: linear-gradient(135deg, rgba(211,173,127,0.1) 0%, rgba(0,0,0,0.8) 100%);
+    padding: 6rem 7%;
+    text-align: center;
+    color: #fff;
+    margin: 4rem 0;
+}
+
+.unit-trust-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.unit-trust-cta-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+.unit-trust-cta-subtitle {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.unit-trust-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.unit-trust-cta-btn {
+    background: var(--main-color);
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(211,173,127,0.3);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.unit-trust-cta-btn:hover {
+    background: #fff;
+    color: var(--main-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(211,173,127,0.4);
+}
+
+@media (max-width: 900px) {
+    .unit-trust-cta-section {
+        padding: 4rem 7%;
+        margin: 3rem 0;
+    }
+    
+    .unit-trust-cta-title {
+        font-size: 2.6rem;
+    }
+    
+    .unit-trust-cta-subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .unit-trust-cta-btn {
+        font-size: 1.6rem;
+        padding: 1.3rem 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .unit-trust-cta-title {
+        font-size: 2.2rem;
+    }
+    
+    .unit-trust-cta-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .unit-trust-cta-btn {
+        font-size: 1.4rem;
+        padding: 1.2rem 2rem;
+    }
+}
+
+/* Unit Trust Hero Description Section */
+.unit-trust-hero-desc {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(24,24,27,0.7);
+    border-radius: 1.2rem;
+    padding: 2.2rem 2rem 2.5rem 2rem;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.13);
+}
+
+.unit-trust-hero-desc h2 {
+    color: var(--main-color);
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.unit-trust-hero-desc p {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .unit-trust-hero-desc {
+        padding: 1.2rem 0.7rem 1.5rem 0.7rem;
+    }
+    .unit-trust-hero-desc h2 {
+        font-size: 1.8rem;
+    }
+    .unit-trust-hero-desc p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Global minimum font sizes for better readability */
+p, li, span, div, a {
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+    line-height: 1.6;
+}
+
+/* Increase base font size for mobile */
+@media (max-width: 768px) {
+    html {
+        font-size: 65%; /* Increased from 62.5% */
+    }
+    
+    /* Ensure minimum readable sizes for all text */
+    p, li, span, div, a {
+        font-size: clamp(1.6rem, 3vw, 2rem);
+        line-height: 1.7;
+    }
+    
+    /* Improve heading readability on mobile */
+    h1 { font-size: clamp(2.4rem, 5vw, 3.2rem); }
+    h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
+    h3 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); }
+    h4 { font-size: clamp(1.6rem, 3vw, 2rem); }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 68%; /* Further increased for very small screens */
+    }
+    
+    /* Even larger minimum sizes for very small screens */
+    p, li, span, div, a {
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
+        line-height: 1.8;
+    }
+    
+    /* Larger headings for very small screens */
+    h1 { font-size: clamp(2.6rem, 6vw, 3.4rem); }
+    h2 { font-size: clamp(2.2rem, 5vw, 3rem); }
+    h3 { font-size: clamp(2rem, 4.5vw, 2.6rem); }
+    h4 { font-size: clamp(1.8rem, 4vw, 2.2rem); }
+}
+
+/* Improve spacing and organization */
+section {
+    padding: clamp(3rem, 5vw, 5rem) 7%;
+    margin-bottom: 2rem;
+}
+
+/* Better spacing for cards and containers */
+.card, .container, .section {
+    padding: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 2rem;
+}
+
+/* Improve button readability */
+.btn, .risk-btn, .special-cta-btn, .unit-trust-cta-btn {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    padding: clamp(1.2rem, 2.5vw, 1.8rem) clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.4;
+}
+
+/* Better navigation readability */
+.header .navbar a {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    padding: clamp(1.2rem, 2vw, 1.5rem) clamp(0.8rem, 1.5vw, 1rem);
+}
+
+/* Improve footer readability */
+.footer-section p,
+.footer-section a {
+    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+    line-height: 1.6;
+}
+
+/* Better form readability */
+.contact-form input,
+.contact-form textarea,
+.contact-form label {
+    font-size: clamp(1.5rem, 2.8vw, 1.8rem);
+    padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Improve list readability */
+ul li, ol li {
+    font-size: clamp(1.5rem, 2.8vw, 1.8rem);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+}
+
+/* Better table readability */
+table, th, td {
+    font-size: clamp(1.4rem, 2.5vw, 1.7rem);
+    padding: clamp(0.8rem, 1.5vw, 1.2rem);
+}
+
+/* Improve FAQ readability */
+.faq-question {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    padding: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+
+.faq-answer {
+    font-size: clamp(1.5rem, 2.8vw, 1.8rem);
+    padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Better hero section readability */
+.hero-content h1,
+.special-hero-title,
+.unit-trust-hero-title {
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    line-height: 1.3;
+}
+
+.hero-content p,
+.special-hero-subtitle,
+.unit-trust-hero-subtitle {
+    font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+    line-height: 1.6;
+}
+
+/* Improve card content readability */
+.card h3,
+.container h3 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-bottom: 1rem;
+}
+
+.card p,
+.container p {
+    font-size: clamp(1.5rem, 2.8vw, 1.8rem);
+    line-height: 1.7;
+}
+
+/* Better spacing for mobile */
+@media (max-width: 768px) {
+    .card, .container, .section {
+        padding: clamp(2.5rem, 5vw, 3.5rem);
+        margin-bottom: 3rem;
+    }
+    
+    /* Increase spacing between elements */
+    .card + .card,
+    .container + .container,
+    .section + .section {
+        margin-top: 3rem;
+    }
+}
+
+/* Consolidated inline styles from HTML files */
+
+/* Resources page styles */
+.resources-section {
+    max-width: 1100px;
+    margin: 0 auto 3rem auto;
+    padding: 2.5rem 2rem 2rem 2rem;
+    background: rgba(24, 24, 27, 0.95);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+    text-align: center;
+}
+
+.resources-section-title {
+    color: var(--main-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.resources-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.resource-card {
+    background: #18181b;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.13);
+    padding: 2rem 1.5rem;
+    min-width: 260px;
+    max-width: 340px;
+    width: 100%;
+    text-align: left;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(44,62,80,0.2);
+    border-color: var(--main-color);
+}
+
+.resource-card h4 {
+    color: var(--main-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.1rem;
+}
+
+.resource-card p {
+    font-size: 1.3rem;
+}
+
+/* Testimonials section */
+.testimonials-section {
+    background: var(--bg);
+    padding: 4rem 0;
+}
+
+.testimonials-title {
+    text-align: center;
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.testimonials-subtitle {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+}
+
+.testimonials-container {
+    max-width: 1100px;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: #18181b;
+    border-radius: 1.2rem;
+    border-left: 4px solid var(--main-color);
+    border-top: 4px solid var(--main-color);
+    margin-bottom: 2.5rem;
+    padding: 2.5rem 2.2rem;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.13);
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    text-align: right;
+    margin-top: 1.5rem;
+    font-style: normal;
+    color: var(--main-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.testimonial-author span {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Main content styles */
+.main-content {
+    min-height: 60vh;
+    padding: 3.5rem 0 2rem 0;
+    text-align: center;
+}
+
+.contact-main {
+    min-height: 60vh;
+    padding: 6rem 0 2rem 0;
+    text-align: center;
+}
+
+.contact-title {
+    color: var(--main-color);
+    margin-bottom: 2rem;
+}
+
+/* Unit Trust page styles */
+.unit-trust-description {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+/* FAQ answer display */
+.faq-answer.show {
+    display: block;
+}
+
+/* Capital Risk Advisory styles */
+.risk-services-list {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.risk-conclusion {
+    margin-top: 2rem;
+}
+
+/* Advisory Services styles */
+.advisory-package-icon {
+    color: #2a7cff;
+}
+
+/* Innovative Savings styles */
+.tier-icon {
+    color: #3ecf4c;
+}
+
+.tier-icon.blue {
+    color: #2a7cff;
+}
+
+.tier-icon.purple {
+    color: #a259e6;
+}
+
+/* Google Maps iframe styles */
+.google-maps-iframe {
+    border: 0;
+    width: 100%;
+    height: 300px;
+}
+
+/* Responsive adjustments for consolidated styles */
+@media (max-width: 900px) {
+    .resources-section {
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+    }
+    
+    .resources-section-title {
+        font-size: 2rem;
+    }
+    
+    .resource-card {
+        min-width: 240px;
+        padding: 1.8rem 1.3rem;
+    }
+    
+    .resource-card h4 {
+        font-size: 1.4rem;
+    }
+    
+    .resource-card p {
+        font-size: 1.2rem;
+    }
+    
+    .testimonials-title {
+        font-size: 2.4rem;
+    }
+    
+    .testimonials-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .testimonial-card {
+        padding: 2rem 1.8rem;
+        font-size: 1.3rem;
+    }
+    
+    .testimonial-author {
+        font-size: 1.2rem;
+    }
+    
+    .unit-trust-description {
+        font-size: 1.4rem;
+    }
+    
+    .risk-services-list {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .resources-section {
+        padding: 1.8rem 1.2rem 1.2rem 1.2rem;
+    }
+    
+    .resources-section-title {
+        font-size: 1.8rem;
+    }
+    
+    .resource-card {
+        min-width: 220px;
+        padding: 1.5rem 1.2rem;
+    }
+    
+    .resource-card h4 {
+        font-size: 1.3rem;
+    }
+    
+    .resource-card p {
+        font-size: 1.1rem;
+    }
+    
+    .testimonials-title {
+        font-size: 2.2rem;
+    }
+    
+    .testimonials-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.8rem 1.5rem;
+        font-size: 1.2rem;
+    }
+    
+    .testimonial-author {
+        font-size: 1.1rem;
+    }
+    
+    .unit-trust-description {
+        font-size: 1.3rem;
+    }
+    
+    .risk-services-list {
+        font-size: 1.4rem;
+    }
+}
+
+/* Special Fund "What We Offer" list items - larger font size */
+.offer-list li.highlighted {
+    font-size: clamp(1.6rem, 2.8vw, 1.9rem);
+    line-height: 1.6;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+    .offer-list li.highlighted {
+        font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .offer-list li.highlighted {
+        font-size: clamp(1.4rem, 2.2vw, 1.6rem);
+    }
 }
