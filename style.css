@@ -229,7 +229,7 @@ section{
 
 .footer-section .contact-info p{
     margin-bottom: 1rem;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 .social-links {
@@ -547,8 +547,8 @@ section{
 .about-container {
     background: var(--bg);
     color: #fff;
-    padding: 6rem 7% 3rem 7%;
-    margin-top: 9rem;
+    padding: 3rem 7% 2rem 7%;
+    margin-top: 4rem;
 }
 .about-container h1 {
     color: var(--main-color);
@@ -1132,13 +1132,13 @@ section{
 }
 
 .special-hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Images/wealth.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Images/wealth.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: #fff;
-    padding: 6rem 0 3rem 0;
-    text-align: center;
+    padding: 6rem 2rem 3rem 2rem;
+    text-align: left;
     min-height: 60vh;
     display: flex;
     flex-direction: column;
@@ -1163,8 +1163,8 @@ section{
 
 .special-hero-desc {
     max-width: 700px;
-    margin: 0 auto;
-    background: rgba(24,24,27,0.7);
+    margin: 0;
+    background: rgba(24,24,27,0.4);
     border-radius: 1.2rem;
     padding: 2.2rem 2rem 2.5rem 2rem;
     box-shadow: 0 4px 16px rgba(44,62,80,0.13);
@@ -1187,7 +1187,10 @@ section{
 
 @media (max-width: 900px) {
     .special-hero-section {
-        padding: 3rem 0 1.5rem 0;
+        padding: 3rem 1rem 1.5rem 1rem;
+    }
+    .unit-trust-hero-section {
+        padding: 3rem 1rem 1.5rem 1rem;
     }
     .special-hero-title {
         font-size: 2.1rem;
@@ -1340,16 +1343,16 @@ section{
 }
 
 .asset-classes-title {
-    font-size: 2.3rem;
+    font-size: 2.8rem;
     color: var(--main-color);
     font-weight: 800;
-    margin-bottom: 2.2rem;
+    margin-bottom: 2.5rem;
     letter-spacing: 0.01em;
 }
 
 .asset-classes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2.2rem 2.2rem;
     max-width: 1300px;
     margin: 0 auto;
@@ -1357,83 +1360,81 @@ section{
 }
 
 .asset-class-card {
-  background: #18181b;
+  background: #1a1a1a;
   color: #fff;
+  border: 2px solid var(--main-color);
   border-radius: 1.5rem;
   box-shadow: 0 6px 24px rgba(44,62,80,0.13);
   padding: 2.2rem 2rem;
   min-width: 220px;
   max-width: 400px;
   width: 100%;
-  text-align: center;
+  text-align: left;
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   transition: box-shadow 0.18s, background 0.18s, color 0.18s, max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   min-height: 0;
-  max-height: 60px;
-  overflow: hidden;
+  max-height: none;
+  overflow: visible;
   cursor: pointer;
 }
 
 .asset-class-card.open {
-  background: var(--main-color);
-  color: #18181b;
-  max-height: 300px;
+  background: #1a1a1a;
+  color: #fff;
+  max-height: none;
   padding-bottom: 2.2rem;
 }
 
 .asset-class-card:hover {
-  background: var(--main-color);
-  color: #18181b;
+  background: #1a1a1a;
+  color: #fff;
 }
 
 .asset-class-title {
   background: none;
   border: none;
-  color: #fff;
+  color: var(--main-color);
   font-size: 1.6rem;
   font-weight: 700;
   width: 100%;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
   padding: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   transition: color 0.2s;
   display: block;
 }
 
 .asset-class-title:focus,
 .asset-class-title:hover {
-  color: #18181b;
+  color: var(--main-color);
 }
 
 .asset-class-card.open .asset-class-title {
-  color: #18181b;
+  color: var(--main-color);
 }
 
 .asset-class-card:not(.open) .asset-class-title {
-  color: #fff;
+  color: var(--main-color);
 }
 
 .asset-class-info {
-  display: none;
-  font-size: 1.5rem;
-  color: #fff;
-  background: #222;
-  border-radius: 0.7rem;
-  margin-top: 0.5rem;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 2px 8px rgba(44,62,80,0.10);
-  animation: fadeIn 0.3s;
-}
-
-.asset-class-card.open .asset-class-info {
   display: block;
+  font-size: 1.4rem;
+  color: #fff;
+  background: none;
+  border-radius: 0;
+  margin-top: 0;
+  padding: 0;
+  box-shadow: none;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 @media (max-width: 900px) {
@@ -1458,7 +1459,9 @@ section{
         font-size: 1.2rem;
     }
     .asset-classes-grid {
-        gap: 1.2rem 0.7rem;
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        max-width: 400px;
     }
     .asset-class-card {
         padding: 1.2rem 0.7rem;
@@ -1481,6 +1484,18 @@ section{
     font-weight: 800;
     margin-bottom: 2.5rem;
     letter-spacing: 0.01em;
+}
+
+.get-started-subtitle {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #FFD700;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .get-started-list {
@@ -1536,6 +1551,10 @@ section{
     }
     .get-started-title {
         font-size: 1.5rem;
+    }
+    .get-started-subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
     }
     .get-started-list {
         gap: 1.2rem;
@@ -1784,6 +1803,26 @@ section{
     overflow-wrap: break-word;
     max-width: 100%;
     text-align: center;
+}
+
+.contact-info-card p a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.contact-info-card p a:hover {
+    color: var(--main-color);
+}
+
+/* Ensure email addresses are always lowercase */
+.contact-info-card p,
+.contact-info-card p a,
+.footer-section p,
+.footer-section .contact-info p,
+.faq-answer {
+    text-transform: none !important;
 }
 
 /* Specific styling for email card only */
@@ -2047,6 +2086,80 @@ div.contact-info-card.email-card p a.contact-email-link {
     border-radius: 1.2rem;
     letter-spacing: 0.03em;
     pointer-events: auto;
+    margin-bottom: 2rem;
+}
+
+.hero-image-cta {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.hero-image-cta .risk-btn {
+    background: var(--main-color);
+    color: #fff;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.hero-image-cta .risk-btn:hover {
+    background: #fff;
+    color: var(--main-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.hero-image-cta .special-cta-btn {
+    background: var(--main-color);
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(211,173,127,0.3);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-image-cta .special-cta-btn:hover {
+    background: #fff;
+    color: var(--main-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(211,173,127,0.4);
+}
+
+.hero-image-cta .unit-trust-cta-btn {
+    background: var(--main-color);
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(211,173,127,0.3);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hero-image-cta .unit-trust-cta-btn:hover {
+    background: #fff;
+    color: var(--main-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(211,173,127,0.4);
 }
 
 @media (max-width: 900px) {
@@ -2058,6 +2171,22 @@ div.contact-info-card.email-card p a.contact-email-link {
     .hero-image-title {
         font-size: 2rem;
         padding: 0.7rem 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .hero-image-cta {
+        bottom: 1rem;
+    }
+    .hero-image-cta .risk-btn {
+        padding: 1rem 2rem;
+        font-size: 1.4rem;
+    }
+    .hero-image-cta .special-cta-btn {
+        padding: 1.3rem 2.5rem;
+        font-size: 1.6rem;
+    }
+    .hero-image-cta .unit-trust-cta-btn {
+        padding: 1.3rem 2.5rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -3243,11 +3372,14 @@ div.contact-info-card.email-card p a.contact-email-link {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 8rem 7% 6rem;
-    text-align: center;
+    padding: 6rem 2rem 3rem 2rem;
+    text-align: left;
     color: #fff;
     margin-top: 9rem;
     min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Special Fund CTA Section */
@@ -3275,16 +3407,18 @@ div.contact-info-card.email-card p a.contact-email-link {
 .special-cta-subtitle {
     font-size: 1.8rem;
     line-height: 1.6;
-    color: #fff;
-    margin-bottom: 3rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
     opacity: 0.9;
 }
 
 .special-cta-buttons {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+    max-width: 800px;
+    margin: 2rem 0 0 auto;
 }
 
 .special-cta-btn {
@@ -3328,6 +3462,8 @@ div.contact-info-card.email-card p a.contact-email-link {
         font-size: 1.6rem;
         padding: 1.3rem 2.5rem;
     }
+    
+
 }
 
 @media (max-width: 600px) {
@@ -3371,15 +3507,17 @@ div.contact-info-card.email-card p a.contact-email-link {
     font-size: 1.8rem;
     line-height: 1.6;
     color: #fff;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     opacity: 0.9;
 }
 
 .unit-trust-cta-buttons {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+    max-width: 800px;
+    margin: 2rem 0 0 auto;
 }
 
 .unit-trust-cta-btn {
@@ -3423,6 +3561,8 @@ div.contact-info-card.email-card p a.contact-email-link {
         font-size: 1.6rem;
         padding: 1.3rem 2.5rem;
     }
+    
+
 }
 
 @media (max-width: 600px) {
@@ -3443,8 +3583,8 @@ div.contact-info-card.email-card p a.contact-email-link {
 /* Unit Trust Hero Description Section */
 .unit-trust-hero-desc {
     max-width: 700px;
-    margin: 0 auto;
-    background: rgba(24,24,27,0.7);
+    margin: 0;
+    background: rgba(24,24,27,0.4);
     border-radius: 1.2rem;
     padding: 2.2rem 2rem 2.5rem 2rem;
     box-shadow: 0 4px 16px rgba(44,62,80,0.13);
