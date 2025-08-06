@@ -3,9 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuBtn = document.getElementById('menu-btn');
     const navbar = document.querySelector('.navbar');
 
+    console.log('Menu button:', menuBtn);
+    console.log('Navbar:', navbar);
+
     if (menuBtn && navbar) {
-        menuBtn.addEventListener('click', function() {
+        menuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Menu button clicked');
             navbar.classList.toggle('active');
+            console.log('Navbar active class:', navbar.classList.contains('active'));
         });
 
         // Close menu when clicking on a link (but not the Services dropdown toggle or submenu toggle)
@@ -24,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 navbar.classList.remove('active');
             }
         });
+    } else {
+        console.error('Menu button or navbar not found');
     }
 });
 
@@ -55,19 +64,34 @@ document.addEventListener('DOMContentLoaded', function() {
 // This ensures the dropdown works on click for mobile and keyboard users
 
 document.addEventListener('DOMContentLoaded', function() {
-    var dropdown = document.querySelector('.navbar .dropdown');
-    var dropbtn = dropdown.querySelector('.dropbtn');
-    var dropdownContent = dropdown.querySelector('.dropdown-content');
+    var dropdowns = document.querySelectorAll('.navbar .dropdown');
+    
+    dropdowns.forEach(function(dropdown) {
+        var dropbtn = dropdown.querySelector('.dropbtn');
+        var dropdownContent = dropdown.querySelector('.dropdown-content');
 
-    dropbtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        dropdown.classList.toggle('open');
+        if (dropbtn && dropdownContent) {
+            dropbtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.toggle('open');
+            });
+
+            // Close other dropdowns when opening a new one
+            dropdowns.forEach(function(otherDropdown) {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('open');
+                }
+            });
+        }
     });
 
     // Close dropdown when clicking outside
     document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove('open');
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(function(dropdown) {
+                dropdown.classList.remove('open');
+            });
         }
     });
 });
@@ -185,4 +209,22 @@ document.querySelectorAll('.asset-class-card').forEach(card => {
     if (e.target.classList.contains('asset-class-info')) return;
     card.classList.toggle('open');
   });
+});
+
+// Footer Services Dropdown (Click to Open)
+document.addEventListener('DOMContentLoaded', function() {
+    var dropbtn = document.querySelector('.footer-dropbtn');
+    var dropdown = document.querySelector('.footer-dropdown');
+    if (dropbtn && dropdown) {
+        dropbtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdown.classList.toggle('open');
+        });
+        // Close dropdown if clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('open');
+            }
+        });
+    }
 });
