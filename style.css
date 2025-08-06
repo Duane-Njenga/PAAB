@@ -39,6 +39,8 @@ html::-webkit-scrollbar-thumb{
 
 body{
     background: var(--bg);
+    margin: 0;
+    padding: 0;
 }
 
 .btn{
@@ -59,7 +61,33 @@ body{
 }
 
 section{
-    padding: 2rem 7%;
+    padding: 1rem 7%;
+}
+
+section:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.about-container {
+    padding: 2rem 7% !important;
+    margin-top: 1rem !important;
+}
+
+.statements-section {
+    padding: 2rem 7% !important;
+}
+
+.core-values-section {
+    padding: 2rem 7% !important;
+}
+
+.team-section {
+    padding: 2rem 7% !important;
+}
+
+.leadership-section {
+    padding: 2rem 7% !important;
 }
 .header{
     background: var(--bg);
@@ -68,14 +96,20 @@ section{
     justify-content: space-between;
     padding: 1.5rem 7%;
     border-bottom: var(--border);
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    overflow: visible !important;
+    position: relative;
+    z-index: 1001;
+    overflow: visible;
 }
 
 .header .logo{
     order: 1;
+    margin-left: 0;
+    padding-left: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .header .navbar{
@@ -85,15 +119,23 @@ section{
     justify-content: center;
     align-items: center;
     overflow: visible !important;
+    margin-left: 250px;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 5;
 }
 
 .header .icons{
     order: 3;
+    margin-left: auto;
+    margin-right: 20px;
+    position: relative;
+    z-index: 5;
 }
 
 .header .logo img{
-    height: 6rem;
-    max-width: 100%;
+    height: 13rem;
+    max-width: 350px;
 }
 
 .header .navbar a, .header .navbar .dropdown {
@@ -102,6 +144,10 @@ section{
     font-size: 1.6rem;
     color: #fff;
     white-space: nowrap;
+}
+
+.header .navbar .dropdown {
+    position: relative;
 }
 
 .header .navbar a:hover{
@@ -117,31 +163,32 @@ section{
     margin-left: 2rem;
 }
 
-.header .icons .phone-info{
+.header .navbar .phone-info{
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 1.6rem;
     color: #fff;
-    margin-left: 2rem;
+    margin-left: auto;
+    white-space: nowrap;
 }
 
-.header .icons .phone-info i{
+.header .navbar .phone-info i{
     font-size: 1.6rem;
     color: var(--main-color);
 }
 
-.header .icons .phone-info span{
+.header .navbar .phone-info span{
     font-weight: 500;
     white-space: nowrap;
     color: #fff;
 }
 
-.header .icons .phone-info:hover{
+.header .navbar .phone-info:hover{
     color: var(--main-color);
 }
 
-.header .icons .phone-info:hover i{
+.header .navbar .phone-info:hover i{
     color: var(--main-color);
 }
 
@@ -348,10 +395,33 @@ section{
 @media (max-width:768px){
     #menu-btn{
         display: inline-block;
+        cursor: pointer;
+        font-size: 2.5rem;
+        color: #fff;
+        z-index: 1003;
+    }
+    
+    .header .logo img {
+        height: 10rem;
+        max-width: 250px;
     }
 
     .header .icons .phone-info{
         display: none;
+    }
+    
+    .header .navbar .phone-info{
+        display: flex;
+        color: #fff;
+        margin: 0.5rem 0;
+        padding: 1rem;
+        font-size: 1.8rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        background: var(--black);
+        text-align: left;
+        box-sizing: border-box;
+        order: 999;
     }
 
     .header .navbar{
@@ -367,6 +437,8 @@ section{
         align-items: flex-start;
         padding: 2rem;
         transition: right 0.3s ease;
+        z-index: 1002;
+        overflow-y: auto;
     }
 
     .header .navbar.active{
@@ -377,9 +449,10 @@ section{
     .header .navbar .dropdown {
         color: #fff;
         display: block;
-        margin: 1rem 0;
+        margin: 0.5rem 0;
         padding: 1rem;
         font-size: 1.8rem;
+        font-weight: normal;
         border-bottom: 1px solid rgba(255,255,255,0.1);
         width: 100%;
         background: none;
@@ -397,28 +470,32 @@ section{
         display: block;
         width: 100%;
         padding: 1rem;
-        font-size: 1.8rem;
+        font-size: 1.8rem !important;
+        font-weight: normal;
         border-bottom: 1px solid rgba(255,255,255,0.1);
         background: none;
         text-align: left;
         box-sizing: border-box;
     }
     .header .navbar .dropdown-content {
-        position: static;
-        width: 100%;
-        min-width: unset;
-        box-shadow: none;
-        border-radius: 0 0 16px 16px;
-        border: none;
-        background: #18181b;
-        padding: 0;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    min-width: unset;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    background: #18181b;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
     
     .header .navbar .dropdown.open .dropdown-content {
         opacity: 1;
@@ -427,8 +504,8 @@ section{
         max-height: 500px;
     }
     .header .navbar .dropdown-content a {
-        font-size: 1.7rem;
-        padding: 1.2rem 2rem;
+        font-size: 1.8rem;
+        padding: 1rem;
         border-radius: 0;
         border-bottom: 1px solid rgba(255,255,255,0.07);
         width: 100%;
@@ -439,6 +516,20 @@ section{
     }
     .header .navbar .dropdown-content a:last-child {
         border-bottom: none;
+    }
+    
+    .header .navbar .phone-info{
+        display: flex;
+        color: #fff;
+        margin: 0.5rem 0;
+        padding: 1rem;
+        font-size: 1.8rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        background: var(--black);
+        text-align: left;
+        box-sizing: border-box;
+        order: 999;
     }
 
     .home{
@@ -498,7 +589,8 @@ section{
     }
 
     .header .logo img{
-        height: 4rem;
+        height: 8rem;
+        max-width: 200px;
     }
 
     .header .navbar{
@@ -626,118 +718,103 @@ section{
 }
 
 /* Navbar Dropdown Styles (update for hover and mobile click) */
-.navbar {
-    position: relative;
-    display: block;
-    overflow: visible !important;
-    text-align: center;
-}
+/* Desktop navbar styles only */
+@media (min-width: 769px) {
+    .navbar {
+        position: relative;
+        display: block;
+        overflow: visible !important;
+        text-align: center;
+    }
 
-.navbar a, .navbar .dropdown {
-    padding: 1.5rem 1rem;
-    display: inline-block;
-    vertical-align: middle;
-}
+    .navbar a, .navbar .dropdown {
+        padding: 1.5rem 1rem;
+        display: inline-block;
+        vertical-align: middle;
+    }
 
-.navbar .dropdown {
-    position: relative;
-}
+    .navbar .dropdown {
+        position: relative;
+    }
 
-.navbar .dropdown-content {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    z-index: 1001;
-    flex-direction: column;
-    width: max-content;
-    min-width: 320px;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.navbar .dropdown.open .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-.navbar .dropdown-content a {
-    display: block;
-    width: 100%;
-    text-align: left;
-}
-
-.navbar .dropdown-content a:last-child {
-    border-radius: 0 0 12px 12px;
-}
-
-.navbar .dropdown-content a:hover, .navbar .dropdown-content a:focus {
-    background-color: var(--main-color);
-    color: #13131a;
-}
-
-/* Mobile adjustments */
-@media (max-width: 991px) {
     .navbar .dropdown-content {
-        border-radius: 0 0 16px 16px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-        border: 1px solid var(--main-color);
-        margin-top: 0.5rem;
-        background: #13131a;
-        padding: 0;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 1001;
+        flex-direction: column;
+        width: max-content;
+        min-width: 320px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
+    .navbar .dropdown.open .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
     .navbar .dropdown-content a {
-        font-size: 1.6rem;
-        padding: 1.2rem 2rem;
-        border-radius: 0;
+        display: block;
+        width: 100%;
+        text-align: left;
     }
+
     .navbar .dropdown-content a:last-child {
         border-radius: 0 0 12px 12px;
     }
+
+    .navbar .dropdown-content a:hover, .navbar .dropdown-content a:focus {
+        background-color: var(--main-color);
+        color: #13131a;
+    }
 }
 
-/* Dropdown menu styles */
-.dropdown-content {
-    background: #18181b;
-    color: #fff;
-    border-radius: 0 0 16px 16px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-    padding: 0.5rem 0;
-    min-width: 320px;
-    border: 1px solid var(--main-color);
-}
-.dropdown-content a {
-    color: #fff;
-    padding: 1.2rem 2rem;
-    display: block;
-    text-decoration: none;
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 0;
-    font-size: 1.3rem;
-    font-weight: 500;
-    text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    letter-spacing: 0.01em;
-}
-.dropdown-content a:last-child {
-    border-bottom: none;
-}
-.dropdown-content a:hover {
-    background: var(--main-color);
-    color: #18181b;
-    box-shadow: 0 2px 8px rgba(210,169,125,0.12);
-}
-.dropdown-content a:first-child:hover {
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-}
-.dropdown-content a:last-child:hover {
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
+/* Dropdown menu styles - Desktop only */
+@media (min-width: 769px) {
+    .dropdown-content {
+        background: #18181b;
+        color: #fff;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        padding: 0.5rem 0;
+        min-width: 320px;
+        border: 1px solid var(--main-color);
+    }
+    .dropdown-content a {
+        color: #fff;
+        padding: 1.2rem 2rem;
+        display: block;
+        text-decoration: none;
+        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 0;
+        font-size: 1.3rem;
+        font-weight: 500;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        letter-spacing: 0.01em;
+    }
+    .dropdown-content a:last-child {
+        border-bottom: none;
+    }
+    .dropdown-content a:hover {
+        background: var(--main-color);
+        color: #18181b;
+        box-shadow: 0 2px 8px rgba(210,169,125,0.12);
+    }
+    .dropdown-content a:first-child:hover {
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+    .dropdown-content a:last-child:hover {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
 }
 
 /* Core Values Section */
@@ -2028,10 +2105,18 @@ div.contact-info-card.email-card p a.contact-email-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 9rem;
+    margin-top: 0 !important;
     margin-bottom: 2rem;
     overflow: hidden;
     padding: 0;
+    top: 0;
+    z-index: 1;
+}
+
+/* Ensure hero image starts immediately after header */
+header + .hero-image-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 .hero-img {
@@ -4063,4 +4148,128 @@ table, th, td {
     .offer-list li.highlighted {
         font-size: clamp(1.4rem, 2.2vw, 1.6rem);
     }
+}
+
+.offer-list li.highlighted {
+    background: linear-gradient(135deg, var(--main-color), #b8945f);
+    color: #fff;
+    font-weight: 700;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(211, 173, 127, 0.3);
+    transform: scale(1.05);
+    border: 2px solid var(--main-color);
+}
+
+@media (max-width: 900px) {
+    .offer-list li.highlighted {
+        padding: 1.2rem 1.5rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .offer-list li.highlighted {
+        padding: 1rem 1.2rem;
+        font-size: 1.3rem;
+    }
+}
+
+/* Resources page specific styles */
+.resources-section {
+    background: #000;
+}
+
+.resources-section-title {
+    font-size: 3.2rem;
+}
+
+.resources-cards {
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1400px;
+}
+
+.resource-card {
+    background: #000;
+    padding: 3rem 2.5rem;
+    min-height: 220px;
+    width: 100%;
+}
+
+.resource-card h4 {
+    font-size: 1.8rem;
+}
+
+.resource-card p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Testimonials section styles */
+.testimonials-section {
+    background: var(--bg);
+    padding: 4rem 0;
+}
+
+.testimonials-title {
+    text-align: center;
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.testimonials-subtitle {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+}
+
+.testimonials-container {
+    max-width: 1100px;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: #18181b;
+    border-radius: 1.2rem;
+    border-left: 4px solid var(--main-color);
+    border-top: 4px solid var(--main-color);
+    margin-bottom: 2.5rem;
+    padding: 2.5rem 2.2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-author {
+    text-align: right;
+    margin-top: 1.5rem;
+    font-style: normal;
+    color: var(--main-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.testimonial-author span {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Capital Risk Advisory specific styles */
+.risk-services-list {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.risk-conclusion {
+    margin-top: 2rem;
+}
+
+/* About Us specific styles */
+.team-quote {
+    color: var(--main-color);
 }
